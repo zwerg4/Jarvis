@@ -22,6 +22,7 @@ recognizer = sr.Recognizer()
 microphone = sr.Microphone()
 threshold = 120 # 2 minuten
 
+
 ip_bulk = '192.168.0.240'
 
 with microphone as source:
