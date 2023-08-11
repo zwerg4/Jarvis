@@ -22,6 +22,8 @@ recognizer = sr.Recognizer()
 microphone = sr.Microphone()
 threshold = 120 # 2 minuten
 
+ip_bulk = '192.168.0.240'
+
 with microphone as source:
   while True:
     recognizer.adjust_for_ambient_noise(source)
@@ -67,7 +69,7 @@ with microphone as source:
                       engine.say("logo meister")
                       engine.runAndWait()
 
-                      bulb = WifiLedBulb('192.168.0.240')
+                      bulb = WifiLedBulb(ip_bulk)
                       bulb.refreshState()
                       bulb.setRgb(220,220,220)
 
@@ -77,7 +79,7 @@ with microphone as source:
                       engine.say("logo meister")
                       engine.runAndWait()
 
-                      bulb = WifiLedBulb('192.168.0.240')
+                      bulb = WifiLedBulb(ip_bulk)
                       bulb.turnOff()
 
                       correct = True
